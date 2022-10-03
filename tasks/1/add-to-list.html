@@ -1,0 +1,36 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+
+  <style>
+    #demo-wrapper {
+      border: 2px solid crimson;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+  </style>
+</head>
+<body>
+
+<h1>Seznam</h1>
+
+
+<input id="input">
+<button onclick="createNewElement()">Vlož</button>
+<div id="local-btn"></div>
+
+<script>
+
+  function createNewElement() {
+    let newElement = document.createElement("div");   // Create a <button> element
+    debugger
+    newElement.innerHTML = document.getElementById("input").value;                   // Insert text
+    document.getElementById("local-btn").appendChild(newElement);
+    document.getElementById("input").value = "";
+  }
+</script>
+
+
+</body>
+</html>
