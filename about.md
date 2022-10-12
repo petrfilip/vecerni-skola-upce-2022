@@ -29,6 +29,7 @@ Workshop:
 Domácí úkol
 - přidání druhého vstupního prvku typu `<select>` pro výběr barvy
 - hodnota barvy se použije pro styl
+![](img.png)
 
 # 3 - React - props vs state, useEffect
 (18-10-2022)
