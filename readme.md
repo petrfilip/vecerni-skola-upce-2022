@@ -36,14 +36,15 @@ Domácí úkol
 - opakování - přidání přeškrtnutí položky v seznamu (ukázka callbacku)
 - správné použití useEffect((v) => v+1)
 - využití useEffect, závislostí a cleanup
-```
+
+```javascript
 useEffect( () => {
   setNumber(number + 1)
 }, [number])
 ```
 
 
-```
+```javascript
 useEffect( () => {
   const interval = setInterval(() => {
     setNumber((prev) => prev + 1)
