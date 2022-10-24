@@ -36,6 +36,25 @@ Domácí úkol
 - opakování - přidání přeškrtnutí položky v seznamu (ukázka callbacku)
 - správné použití useEffect((v) => v+1)
 - využití useEffect, závislostí a cleanup
+```
+useEffect( () => {
+  setNumber(number + 1)
+}, [number])
+```
+
+
+```
+useEffect( () => {
+  const interval = setInterval(() => {
+    setNumber((prev) => prev + 1)
+  }, 1000);
+  
+  return () => { //cleanup function
+    clearInterval(interval)
+  }
+}, [number])
+```
+
 
 # 4 - React - props vs state, useEffect
 (25-10-2022)
