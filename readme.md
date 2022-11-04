@@ -33,9 +33,17 @@ Domácí úkol
 
 # 3 - React - props vs state, useEffect
 (18-10-2022)
-- opakování - přidání přeškrtnutí položky v seznamu (ukázka callbacku)
+- opakování
+  - přidání přeškrtnutí položky v seznamu (ukázka callbacku)
+  - 
+
+
+# 4 - React - props vs state, useEffect
+(25-10-2022)
+- opakování - přidání click-counteru na položku (využití useState)
 - správné použití useEffect((v) => v+1)
 - využití useEffect, závislostí a cleanup
+- načítání dat ze serveru
 
 ```javascript
 useEffect( () => {
@@ -57,18 +65,14 @@ useEffect( () => {
 ```
 
 
-# 4 - React - props vs state, useEffect
-(25-10-2022)
-- napojení localStorage a cookies
-- vytvořte stránkovatelný seznam
-
 # 5 - React - procvičování
 (01-11-2022)
 - filtrování dle atributů
+- stránkovatelný seznam
+
 
 # 6 - React - npm, webpack a knihovny
 (08-11-2022)
-- načítání dat ze serveru
 - jsonserver
 
 # 7 - React - napojení na backend + zadání projektu
@@ -79,6 +83,7 @@ useEffect( () => {
 
 # 8 - projekt - konzultace
 (22-11-2022)
+- napojení localStorage a cookies
 - zadání práce
 
 # 9 - projekt - konzultace
