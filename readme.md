@@ -137,10 +137,9 @@ opakování
 
 (08-11-2022)
 
-- deklarativní tabulka
 
 Workshop:
-
+- deklarativní tabulka
 - univerzální načítání ze serveru
 - stránkovatelný seznam ?
 - filtrování dle atributů (na straně serveru) ?
@@ -183,7 +182,7 @@ const columns = [
 
 return <Table data={data} columns={columns}/>;
 ```
-
+![](06.png)
 Úkol:
 
 - po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
