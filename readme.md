@@ -139,9 +139,10 @@ opakování
 
 
 Workshop:
+- deklarativní seznam
 - deklarativní tabulka
 - univerzální načítání ze serveru
-- deklarativní filtrování dle atributů 
+- deklarativní filtrování dle atributů (na klientu)
 - [jsonserver](https://www.npmjs.com/package/json-server)
 
 ```shell
@@ -182,10 +183,12 @@ const columns = [
 return <Table data={data} columns={columns}/>;
 ```
 ![](06.png)
+
 Úkol:
-- přidejte stránkování
+- přidejte stránkování (stránkování na serveru)
 - přidejte řazení (volitelné)
-- 
+
+
 ![](06-b.gif)
 
 # 7 - React - npm a užitečné knihovny
