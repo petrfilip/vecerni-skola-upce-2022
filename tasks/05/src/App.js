@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from "react";
 import Table from "./Table";
@@ -9,9 +8,7 @@ import MyTable from "./MyTable";
 
 function App() {
 
-    const [data, setData] = useState([])
-
-    const columns = [
+    const todoColumns = [
         {
             attribute: "title"
         },
@@ -20,14 +17,6 @@ function App() {
             component: (item) => <button>{item.id}</button>
         }
     ]
-
-    const fetchData = async () => {
-        const response = await fetch('http://localhost:3004/todos')
-        if (!response.ok) {
-            throw new Error('Data could not be fetched!')
-        }
-        setData(await response.json())
-    }
 
     const todos = [
         {
@@ -93,7 +82,19 @@ function App() {
         }
     ]
 
-    const columnsUserTable = [
+    const todosFilter = [
+    {
+      title: "Active",
+      filterFunction: (data) => data.filter((item) => !item.completed)
+    },
+    {
+      title: "Completed",
+      filterFunction: (data) => data.filter((item) => item.completed)
+
+    }
+  ]
+
+    const usersColumns = [
         {
             attribute: "name"
         },
@@ -112,48 +113,42 @@ function App() {
         }
     ]
 
-    const todosFilter = [
-        {
-            title: "Active",
-            filterFunction: (data) => data.filter((item) => !item.completed)
-        },
-        {
-            title: "Completed",
-            filterFunction: (data) => data.filter((item) => item.completed)
-
-        }
-    ]
-
     const usersFilter = [
         {
             title: "Name",
-            filterComponent: () => <input/>,
-            filterFunction: (data, filterComponentOutput) => data.filter((item) => item.startsWith(filterComponentOutput))
+            filterComponent: (filterComponentOutput, setFilterComponentOutput) => <input key={"myInput"}
+                                                                                         name={"myInput"}
+                                                                                         value={filterComponentOutput?.myInput || ""}
+                                                                                         onChange={(e) => setFilterComponentOutput((prev) => ({ ...prev, myInput: e.target.value
+                                                                                         }) )}/>,
+            filterFunction: (data, filterComponentOutput) => {
+              return data?.filter((item) => (filterComponentOutput.myInput && filterComponentOutput.myInput.length >= 1) ? item.name.toLowerCase().startsWith(filterComponentOutput?.myInput.toLowerCase()) : true)
+            }
         }
     ]
 
     return (<>
             <YellowWrapper title={"Deklarativní seznam"}>
-                <List data={users} component={(user) => <UserItem user={user}/>}/>
+                <List data={users} component={(user) => <UserItem key={"userItem" + user.id} user={user}/>}/>
             </YellowWrapper>
 
             <YellowWrapper title={"Deklarativní tabulka"}>
-                <Table data={users} columns={columnsUserTable}/>
+                <Table data={users} columns={usersColumns}/>
             </YellowWrapper>
 
             <YellowWrapper title={"Deklarativní tabulka s filtrem"}>
-                <Table data={todos} columns={columns} filters={todosFilter}/>
+                <Table data={todos} columns={todoColumns} filters={todosFilter}/>
             </YellowWrapper>
             <YellowWrapper title={"Deklarativní tabulka s filtrem"}>
-                <Table data={users} columns={columnsUserTable} filters={usersFilter}/>
+                <Table data={users} columns={usersColumns} filters={usersFilter}/>
             </YellowWrapper>
 
             <YellowWrapper title={"Deklarativní tabulka s načítáním TODOS ze serveru a stránkováním"}>
-                <MyTable baseUri={"http://localhost:3004/todos"} columns={columns}/>
+                <MyTable baseUri={"http://localhost:3004/todos"} columns={todoColumns}/>
             </YellowWrapper>
 
             <YellowWrapper title={"Deklarativní tabulka s načítáním USERS ze serveru a stránkováním"}>
-                <MyTable baseUri={"http://localhost:3004/users"} columns={columnsUserTable}/>
+                <MyTable baseUri={"http://localhost:3004/users"} columns={usersColumns}/>
             </YellowWrapper>
 
         </>

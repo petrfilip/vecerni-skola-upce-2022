@@ -3,15 +3,20 @@ import {useEffect, useState} from "react";
 export default function Table({data, columns, filters}) {
 
     const [filteredData, setFilteredData] = useState([] || data)
+    const [filterComponentOutput, setFilterComponentOutput] = useState({})
 
     useEffect(() => {
         setFilteredData(data);
     }, [data])
 
+    useEffect(() => {
+      filters && setFilteredData(...filters.map((item) => item?.filterFunction && item.filterFunction(data, filterComponentOutput)))
+    }, [filterComponentOutput])
+
     return <>
-        {filters && filters.map((item) =>
-            item?.filterComponent && item.filterComponent() ||
-            <button onClick={()=> setFilteredData(item.filterFunction(data))}>{item.title}</button>) }
+        {filters && filters.map((item, index) =>
+            item?.filterComponent && item.filterComponent(filterComponentOutput, setFilterComponentOutput) ||
+            <button key={"btn" + index} onClick={()=> setFilteredData(item.filterFunction(data))}>{item.title}</button>) }
 
         <table>
         <tbody>
