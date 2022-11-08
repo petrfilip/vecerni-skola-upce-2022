@@ -141,8 +141,7 @@ opakování
 Workshop:
 - deklarativní tabulka
 - univerzální načítání ze serveru
-- stránkovatelný seznam ?
-- filtrování dle atributů (na straně serveru) ?
+- deklarativní filtrování dle atributů 
 - [jsonserver](https://www.npmjs.com/package/json-server)
 
 ```shell
@@ -184,9 +183,10 @@ return <Table data={data} columns={columns}/>;
 ```
 ![](06.png)
 Úkol:
-
-- po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
-- po kliknutí na tlačítko změnte stav úkolu
+- přidejte stránkování
+- přidejte řazení (volitelné)
+- 
+![](06-b.gif)
 
 # 7 - React - npm a užitečné knihovny
 
@@ -195,6 +195,10 @@ return <Table data={data} columns={columns}/>;
 - UI knihovny
 - Styled components
 - React router
+- práce s REST API (GET, PUT, POST, DELETE)
+
+- po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
+- po kliknutí na tlačítko změnte stav úkolu
 
 # 8 - projekt - zadání práce a ukládání dat na straně klienta
 
