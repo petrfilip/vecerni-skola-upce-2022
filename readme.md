@@ -197,8 +197,9 @@ return <Table data={data} columns={columns}/>;
 - React router
 - práce s REST API (GET, PUT, POST, DELETE)
 
-- po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
-- po kliknutí na tlačítko změnte stav úkolu
+Úkol:
+  - po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
+  - po kliknutí na tlačítko změnte stav úkolu
 
 # 8 - projekt - zadání práce a ukládání dat na straně klienta
 
