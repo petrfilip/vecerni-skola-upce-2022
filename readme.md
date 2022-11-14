@@ -195,14 +195,50 @@ return <Table data={data} columns={columns}/>;
 
 (15-11-2022)
 
-- UI knihovny
-- Styled components
-- React router
 - práce s REST API (GET, PUT, POST, DELETE)
+  - workshop: po kliknutí na tlačítko smazat záznam z DB
+- React router (https://v5.reactrouter.com/web/guides/quick-start)
+  - workshop: po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
+- UI knihovny (https://blog.logrocket.com/top-11-react-ui-libraries-kits/)
+  - workshop: použití tabulky [rsuite.js](https://rsuitejs.com/components/table/) s TODO daty  
+- Styled components (CSS in JS)
+  - workshop: 
+
+![07-a.png](07-a.png)
+
+```javascript
+
+import styled from 'styled-components';
+
+const AppDiv = styled.div`
+  padding: 15px;
+  background-color: #61dafb;
+  margin: 10px;
+`;
+
+const AppLink = styled.span`
+  background-color: brown;
+  padding: 10px;
+  margin: 10px;
+  color: #282c34;
+  border-radius: 3px;
+`;
+
+function App() {
+  return (
+    <AppDiv>
+      <AppLink>CSS</AppLink>
+      <AppLink>in</AppLink>
+      <AppLink>JS</AppLink>
+    </AppDiv>
+  );
+}
+
+```
 
 Úkol:
-  - po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
-  - po kliknutí na tlačítko změnte stav úkolu
+  - po kliknutí na tlačítko změnte stav úkolu (persistentní změna přes REST API)
+  - po kliknutí na tlačítko přejděte na editaci úkolu
 
 # 8 - projekt - zadání práce a ukládání dat na straně klienta
 
