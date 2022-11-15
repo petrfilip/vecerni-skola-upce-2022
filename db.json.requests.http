@@ -1,0 +1,7 @@
+PATCH http://localhost:3004/todos/5
+Content-Type: application/json
+
+{
+  "completed": true
+}
+

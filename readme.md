@@ -191,18 +191,44 @@ return <Table data={data} columns={columns}/>;
 
 ![](06-b.gif)
 
-# 7 - React - npm a užitečné knihovny
+# 7 - React - npm, react router a práce s API
 
 (15-11-2022)
 
 - práce s REST API (GET, PUT, POST, DELETE)
-  - workshop: po kliknutí na tlačítko smazat záznam z DB
+  - workshop: po kliknutí na tlačítko smazat záznam z DB (HTTP Request s metodou `DELETE`)
 - React router (https://v5.reactrouter.com/web/guides/quick-start)
   - workshop: po kliknutí na tlačítko zobrazte detail uživatele, který založil tásk
+
+Úkol:
+  - po kliknutí na tlačítko změnte stav úkolu (persistentní změna přes REST API) atribut `completed` 
+  - po kliknutí na tlačítko přejděte na editaci úkolu (použijte react-router)
+    - zobrazí se formulář, který může umožní editaci položky a umožní změny uložit persistentně
+
+K zamyšlení:
+  - centralizace metod na provolání REST API 
+
+![](08.gif)
+
+HINT pro změnu stavu na `completed`:
+```http request
+PATCH http://localhost:3004/todos/5
+Content-Type: application/json
+
+{
+  "completed": true
+}
+
+```
+
+# 8 - projekt - zadání práce a ukládání dat na straně klienta
+
+(22-11-2022)
+
 - UI knihovny (https://blog.logrocket.com/top-11-react-ui-libraries-kits/)
-  - workshop: použití tabulky [rsuite.js](https://rsuitejs.com/components/table/) s TODO daty  
+  - workshop: použití tabulky [rsuite.js](https://rsuitejs.com/components/table/) s TODO daty
 - Styled components (CSS in JS)
-  - workshop: 
+  - workshop:
 
 ![07-a.png](07-a.png)
 
@@ -237,20 +263,19 @@ function App() {
 ```
 
 Úkol:
-  - po kliknutí na tlačítko změnte stav úkolu (persistentní změna přes REST API)
-  - po kliknutí na tlačítko přejděte na editaci úkolu
+- vytvořte formulář pro přidání položky ((persistentní změna přes REST API))
 
-# 8 - projekt - zadání práce a ukládání dat na straně klienta
 
-(22-11-2022)
+# 9 - projekt - konzultace
+
+(29-11-2022)
 
 - napojení localStorage a cookies
 - useContext
 - zadání práce
 
-# 9 - projekt - konzultace
-
-(29-11-2022)
+Úkol:
+- do localStorage uložte naposledy použité filtry / stránkování
 
 # 10 - projekt - hodnocení
 
