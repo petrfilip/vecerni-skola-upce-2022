@@ -1,61 +1,22 @@
 {
   "shoppingItems": [
     {
-      "id": 1,
-      "content": "rohlik2",
-      "state": "completed",
-      "count": 2,
-      "createdAt": "2022-08-05T08:40:51.620Z",
-      "dtoIn": {
-        "state": "completed"
-      }
+      "content": "Chléb",
+      "state": "active",
+      "count": 4,
+      "id": 2
     },
     {
-      "content": "hdfghdf",
-      "state": "completed",
-      "count": 1,
+      "content": "Máslo",
+      "state": "active",
+      "count": 10,
       "id": 3
     },
     {
-      "content": "asdfasdf",
+      "content": "Makrela",
       "state": "completed",
-      "id": 5
-    },
-    {
-      "content": "asdfasd",
-      "state": "active",
-      "count": 4,
-      "id": 6
-    },
-    {
-      "content": "Rohlík",
-      "state": "completed",
-      "count": 11,
-      "id": 7
-    },
-    {
-      "content": "Chléb",
-      "state": "completed",
-      "count": 1,
-      "id": 8
-    },
-    {
-      "content": "asdfas",
-      "state": "completed",
-      "count": 1,
-      "id": 9
-    },
-    {
-      "content": "sdfgsdf gsdgf sdfg",
-      "state": "completed",
-      "count": 1,
-      "id": 11
-    },
-    {
-      "content": "asdfasdf",
-      "state": "active",
-      "count": 15,
-      "id": 12
+      "count": 7,
+      "id": 4
     }
   ]
 }

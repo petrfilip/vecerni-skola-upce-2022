@@ -269,17 +269,30 @@ function App() {
 # 9 - projekt - konzultace
 
 (29-11-2022)
+### Zadání práce
 
-- napojení localStorage a cookies
-- useContext
-- zadání práce
+Cílem práce je vytvořit nákupní seznam. Do seznamu se položky mohou přidávat, mazat, označit za nakoupené a také lze
+upravit počet položek ke koupi.
 
-Úkol:
-- do localStorage uložte naposledy použité filtry / stránkování
+Veškerá práce s daty je na backendu (řeč je filtrování a řazení)
+
+API:
+- GET `shoppingList` - výpis všech položek
+- POST `shoppingItem` - vytvoření nové položky
+- PUT `shoppingItem` - editace položky (PATCH bohužel v json-serveru nefunguje)
+- DELETE `shoppingItem` - mazání položky
+
+![Ukázka aplikace](10.gif)
+
 
 # 10 - projekt - hodnocení
 
 (6-12-2022)
-
+- napojení localStorage a cookies
+- useContext
 - vyhodnocení semestrální práce
 - nasazení aplikace na server
+  
+Úkol:
+- do localStorage uložte naposledy použité filtry / stránkování
+
