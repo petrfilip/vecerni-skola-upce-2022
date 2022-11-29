@@ -284,6 +284,7 @@ API:
 
 ![Ukázka aplikace](10.gif)
 
+Více k zadání práce najdete v [tasks/09/readme.md](tasks/09/readme.md).
 
 # 10 - projekt - hodnocení
 

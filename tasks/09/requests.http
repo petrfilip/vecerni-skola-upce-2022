@@ -18,23 +18,15 @@ Content-Type: application/json
     "createdAt": "{{$isoTimestamp}}"
 }
 
-### Update item
-PATCH http://localhost:3004/shoppingItem/1
+### Update whole item
+PUT http://localhost:3004/shoppingItem/3
 Accept: application/json
 Content-Type: application/json
 
 {
-    "count": {{$random.integer(1, 100)}}
-}
-
-
-### Update item - set to `completed`
-PATCH http://localhost:3004/shoppingItem/1
-Accept: application/json
-Content-Type: application/json
-
-{
-    "state": "comleted"
+  "content": "Máslo",
+  "state": "active",
+  "count": 10
 }
 
 ### Update item - set to `active`
@@ -47,5 +39,25 @@ Content-Type: application/json
 }
 
 ### Delete item by ID
-DELETE http://localhost:3004/shoppingItem/12
+DELETE http://localhost:3004/shoppingItem/2
 Accept: application/json
+
+
+### Update item - PATCH DOES NOT WORK IN JSON-SERVER FROM WEB-BROWSER
+PATCH http://localhost:3004/shoppingItem/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "count": {{$random.integer(1, 100)}}
+}
+
+
+### Update item - set to `completed` - PATCH DOES NOT WORK IN JSON-SERVER FROM WEB-BROWSER
+PATCH http://localhost:3004/shoppingItem/2
+Accept: application/json
+Content-Type: application/json
+
+{
+  "state": "completed"
+}
